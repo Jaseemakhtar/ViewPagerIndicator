@@ -59,14 +59,12 @@ class ViewpagerIndicator @JvmOverloads constructor(
 
     private fun createDots(count: Int) {
         removeAllViews()
-        if (count <= 0) {
-            addView(createDot())
-        } else {
+        if (count > 0) {
             for (i in 0 until count) {
                 addView(createDot())
             }
+            getChildAt(0).setBackgroundResource(selectedDrawable)
         }
-        getChildAt(0).setBackgroundResource(selectedDrawable)
     }
 
     private fun createDot(): View {
